@@ -40,18 +40,19 @@ header nav{
     margin-right: 60px;
 }
 
-nav ul li{
+nav ul li, a{
     display: inline-block;
     list-style: none;
     color: #fff;
     padding: 20px;
+    text-decoration: none;
 
 }
 
 section{
     height: 700px;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -81,4 +82,29 @@ footer{
 
 footer h3{
     color: #f3f3f3;
+}
+
+.section1-text{
+    background: #f3f3f3;
+    width: 25%;
+    margin-right: 60px;
+    height: 60%;
+    text-align: justify;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.section1-text h2{
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.image-container{
+    width: 40%;
+    height: 40%;
+    margin-left: 60px;
+}
+
+.image-container img{
+    width: 400px;
 }
