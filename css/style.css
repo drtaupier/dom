@@ -4,11 +4,17 @@
     box-sizing: border-box;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     font-family: 'Open Sans', sans-serif;
 }
 
 .container{
+    max-width: 100vw;
+    width: 100vw;
     display: grid;
     grid-template-columns: repeat(2, 1ft);
     grid-template-rows: repeat(5, auto);
@@ -40,16 +46,17 @@ header nav{
     margin-right: 60px;
 }
 
-nav ul li, a{
+nav ul li,a{
     display: inline-block;
     list-style: none;
     color: #fff;
     padding: 20px;
     text-decoration: none;
-
+    cursor: pointer;
 }
 
 section{
+    width: 100vw;
     height: 700px;
     display: flex;
     justify-content: space-around;
@@ -82,29 +89,39 @@ footer{
 
 footer h3{
     color: #f3f3f3;
+    font-weight: normal;
+    font-size: 1em;
 }
 
+/* Creaciones JavaScript */
 .section1-text{
-    background: #f3f3f3;
-    width: 25%;
-    margin-right: 60px;
+    background: hsla(0,0%,0%,0.3);
+    width: 100%;
+    margin-right: 300px;
     height: 60%;
     text-align: justify;
     padding: 20px;
     border-radius: 5px;
+    box-shadow: 7px 7px 15px 1px rgba(82,53,65,0.56);
 }
 
 .section1-text h2{
     margin-bottom: 10px;
     text-align: center;
+    color: #f3f3f3;
 }
 
-.image-container{
-    width: 40%;
-    height: 40%;
-    margin-left: 60px;
+.section1-text p{
+    color: #f3f3f3;
 }
 
+/* Image */
 .image-container img{
-    width: 400px;
+    width: 60%;
+    height: 40%;
+    margin-left: 200px;
+}
+
+.sectionActive{
+    background: #000;
 }
