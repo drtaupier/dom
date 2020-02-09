@@ -1,4 +1,5 @@
 window.onload = function(){
+    const t0 = performance.now();
     class UI{
         addText(variable, style, title, text){
             const element = document.createElement('div');
@@ -77,7 +78,6 @@ window.onload = function(){
             container.insertAdjacentElement("afterbegin", element);
         }
 
-
     }
 
     // texts
@@ -129,7 +129,10 @@ window.onload = function(){
     const sectionBackground = [[sct1, '#FFC16E', '#FF635F'], [sct2, '#BF9376', '#805755'], [sct3, '#C77656', '#CC504B']];
     for (const index in sectionBackground){
         ui.sectionBg(sectionBackground[index][0], sectionBackground[index][1], sectionBackground[index][2]);
-    }    
+    }
+    const t1 = performance.now();
+    
+    console.log('this code take: ', `${t1-t0} milisegundos`);
 }
 
 
