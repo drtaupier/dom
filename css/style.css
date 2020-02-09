@@ -22,6 +22,9 @@ body{
                         "section1 section1"
                         "section2 section2"
                         "section3 section3"
+                        "section4 section4"
+                        "section5 section5"
+                        "section6 section6"
                         "footer footer";
 }
 
@@ -78,6 +81,11 @@ section{
     background: #CC504B;
 }
 
+#section4{
+    grid-area: section4;
+    background: #C4675E;
+}
+
 footer{
     grid-area: footer;
     background: #000;
@@ -123,9 +131,6 @@ footer h3{
     animation: animate ease 3s;
 }
 
-.sectionActive{
-    background: #535353; 
-}
 
 
 
