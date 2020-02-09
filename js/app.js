@@ -33,32 +33,42 @@ window.onload = function(){
         }
 
         sectionBg(section, color1, color2){
-            window.addEventListener('scroll', function(){
+            window.addEventListener('scroll', function(e){
+                const target = e.target;
                 //aquí me devuelve un objeto con los valores de la parte de arriba del elemento.
-                let positionTop = section.getBoundingClientRect().top; //100
+                let positionTop = section.getBoundingClientRect().top;
                 let positionBottom = section.getBoundingClientRect().bottom;
-                console.log('positionTop = ',  positionTop);
+                //console.log('positionTop = ',  positionTop);
+                //console.log('positionBottom = ',  positionBottom);
                 // console.log(positionBottom);
                 //aquí nos permite obtener el valor del tamaño de la pantalla (viewport) y lo dividimos entre 5 para que ahí se genere la animación.
                 let screenSize = window.innerHeight/3.5;
-                let screenSize2 = window.innerHeight/5;
                 // console.log(screenSize);
-                console.log(screenSize);
-                //Si la parte de arriba del elemento se encuentra en un tamaño menor a la quinta parte de la pantalla se genera la animación.
+                //console.log('screenSize: ',screenSize);
+
+                //Si la parte de arriba del elemento se encuentra en un tamaño menor a la tercera parte de la pantalla se genera la animación.
                 if(positionTop < screenSize){
                     section.style.background = color1;
                     section.style.transition = "all 1.5s";
-                }
-                if(positionBottom <= screenSize2){
+                }else{
                     section.style.background = color2;
                     section.style.transition = "all 1.5s";
                 }
-                if(positionTop == 100){
+
+                if(positionBottom < screenSize){
                     section.style.background = color2;
                     section.style.transition = "all 1.5s";
+                }
+
+                if(target.id = "section1"){
+                    if(positionTop == 100){
+                        section.style.background = color2;
+                        section.style.transition = "all 1.5s";
+                    }
                 }
             });
         }
+
 
     }
 
@@ -107,7 +117,7 @@ window.onload = function(){
     //Nav
     const navegacion = [['Section1', '#section1'], ['Section2', '#section2'], ['Section3', '#section3']];
     for (const index in navegacion){
-        ui.nav(navegacion[index][0], navegacion[index][1], navegacion[index][2]);
+        ui.nav(navegacion[index][0], navegacion[index][1]);
     }
     
     // Background
@@ -116,7 +126,6 @@ window.onload = function(){
         ui.sectionBg(sectionBackground[index][0], sectionBackground[index][1], sectionBackground[index][2]);
     }
     
-
 }
 
 
