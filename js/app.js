@@ -33,7 +33,7 @@ window.onload = function(){
             lista.appendChild(a);
         }
 
-        sectionBg(section, color1, color2){
+        sectionBg(section){
             window.addEventListener('scroll', function(){
                 //Aqui consigo la parte superior e inferior del div. y la medida que tiene con relacion al viewport.
                 let positionTop = section.getBoundingClientRect().top;
@@ -46,21 +46,24 @@ window.onload = function(){
 
                 //Si la parte de arriba del elemento se encuentra en un tamaño menor a la tercera parte de la pantalla se genera la animación.
                 if(positionTop < screenSize){
-                    section.style.background = color1;
+                    section.classList.remove('inactive');
+                    section.classList.add('active');
                     section.style.transition = "all 1.5s";
                 }else{
-                    section.style.background = color2;
+                    section.classList.remove('active');
+                    section.classList.add('inactive');
                     section.style.transition = "all 1.5s";
                 }
 
-                if(positionBottom < screenSize){
-                    section.style.background = color2;
+                if(positionBottom<screenSize){
+                    section.classList.remove('active');
+                    section.classList.add('inactive');
                     section.style.transition = "all 1.5s";
                 }
 
                 if(section == sct1){
                     if(positionTop == 100){
-                        section.style.background = color2;
+                        section.classList.add('active');
                         section.style.transition = "all 1.5s";
                     }
                 }
@@ -69,9 +72,9 @@ window.onload = function(){
 
         addSection(sectionId, articleId){
             const container = document.querySelector(".container");
-            const footer = document.getElementById('footer');
             const element = document.createElement("section");
             element.setAttribute('id', `${sectionId}`);
+            element.classList.add('inactive');
             const article = document.createElement('article');
             article.setAttribute('id', `${articleId}`);
             element.appendChild(article);
@@ -89,6 +92,9 @@ window.onload = function(){
     
     const title3 = "Prueba";
     const text3 = "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas Letraset, las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.";
+
+    const title4 = "Prueba";
+    const text4 = "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas Letraset, las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.";
     
     // Instanciando la clase
     const ui = new UI();
@@ -126,9 +132,9 @@ window.onload = function(){
     ui.footerCopyright(footer);
     
     // Background
-    const sectionBackground = [[sct1, '#FFC16E', '#FF635F'], [sct2, '#BF9376', '#805755'], [sct3, '#C77656', '#CC504B']];
+    const sectionBackground = [[sct1], [sct2], [sct3]];
     for (const index in sectionBackground){
-        ui.sectionBg(sectionBackground[index][0], sectionBackground[index][1], sectionBackground[index][2]);
+        ui.sectionBg(sectionBackground[index][0]);
     }
     const t1 = performance.now();
     

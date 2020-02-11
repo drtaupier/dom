@@ -68,22 +68,19 @@ section{
 
 #section1{
     grid-area: section1;
-    background: #FF635F;
 }
 
 #section2{
     grid-area: section2;
-    background: #805755;
 }
 
 #section3{
     grid-area: section3;
-    background: #CC504B;
 }
 
 #section4{
     grid-area: section4;
-    background: #C4675E;
+    
 }
 
 footer{
@@ -131,6 +128,24 @@ footer h3{
     animation: animate ease 3s;
 }
 
+.active{
+    background: #CC504B;
+    transition: all 1.5s;
+}
 
+.inactive{
+    background: rgba(39, 2, 4, 0.88);
+}
+
+@media only screen and (max-width:1700px){
+    .section1-text{
+        margin-right: 300px;
+        height: 70%;
+        text-align: justify;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 7px 7px 15px 1px rgba(82,53,65,0.56);
+    }
+}
 
 
