@@ -82,7 +82,6 @@ section{
 
 #section4{
     grid-area: section4;
-    
 }
 
 footer{
@@ -103,9 +102,9 @@ footer h3{
 /* Creaciones JavaScript */
 .section1-text{
     background: hsla(0,0%,0%,0.3);
-    width: 100%;
+    width: 40%;
     margin-right: 300px;
-    height: 60%;
+    height: 50%;
     text-align: justify;
     padding: 20px;
     border-radius: 5px;
@@ -125,9 +124,7 @@ footer h3{
 /* Image */
 .image-container img{
     width: 60%;
-    height: 40%;
     margin-left: 200px;
-    animation: animate ease 3s;
 }
 
 .active{
@@ -143,33 +140,49 @@ footer h3{
     .section1-text{
         height: 70%;
     }
+
+    .image-container img{
+        width: 80%;
+        margin-left: 60px;
+    }
 }
 
 @media only screen and (max-width:1540px){
     .section1-text{
-        width: 140%;
+        width: 50%;
+        margin-right: 40px;
+    }
+    .image-container img{
+        width: 90%;
+        margin-left: 40px;
     }
 }
 
 @media only screen and (max-width:1430px){
     .section1-text{
-        margin-right: 200px;
-        width: 160%;
+        margin-right: 30px;
+        width: 50%;
+    }
+
+    .image-container img{
+        width: 90%;
+        height: 40%;
+        margin-left: 40px;
     }
 }
 
 @media only screen and (max-width:1260px){
     .section1-text{
-        margin-right:160px;
-        width: 180%;
+        margin-right: 30px;
+        width: 50%;
     }
 }
 
 @media only screen and (max-width:1160px){
     .section1-text{
         margin-right:100px;
-        width: 200%;
-        margin-right: 40px;
+        width: 50%;
+        margin-right: 30px;
     }
 
     .image-container img{
@@ -183,18 +196,23 @@ footer h3{
     header nav{
         margin-right: 10px;
     }
+
     nav ul li,a{
         padding: 15px;
     }
 
     .section1-text{
-        margin-right:100px;
-        width: 230%;
-        margin-right: 30px;
+        width: 60%;
+        height: auto;
+        margin-right: 20px;
+    }
+
+    .section1-text p{
+        margin-bottom: 20px;
     }
 
     .image-container img{
-        width: 80%;
+        width: 90%;
         height: 40%;
         margin-left: 30px;
     }
