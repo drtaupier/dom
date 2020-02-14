@@ -134,16 +134,21 @@ footer h3{
 
 .inactive{
     background: rgba(39, 2, 4, 0.88);
+    transition: all 1.5s;
 }
 
 .sticky{
-    position: fixed;
+    position: sticky;
     z-index: 1000;
     top: 0;
     box-shadow: 0px 4px 3px rgba(0,0,0,.5);
     height: 90px;
     width: 100vw;
     transition: all 0.3s;
+}
+
+.listaActiva{
+    color:#CC504B;
 }
 
 @media only screen and (max-width:1700px){

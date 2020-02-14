@@ -43,9 +43,15 @@ window.onload = function(){
                 }else{
                     header.classList.remove('sticky');
                     header.style.transition = 'all 0.3s';
-                    
                 }
             }) 
+        }
+
+        navActive(){
+            const section = document.querySelectorAll('section');
+            const lista = document.querySelectorAll('a');
+            const navActivo = section[0].hasAttribute('class', 'active');
+            console.log(navActivo);
         }
 
         sectionBg(section){
@@ -67,13 +73,11 @@ window.onload = function(){
                 }else{
                     section.classList.remove('active');
                     section.classList.add('inactive');
-                    section.style.transition = "all 1.5s";
                 }
 
                 if(positionBottom<screenSize){
                     section.classList.remove('active');
                     section.classList.add('inactive');
-                    section.style.transition = "all 1.5s";
                 }
 
                 if(section == sct1){
@@ -157,6 +161,8 @@ window.onload = function(){
     }
 
     ui.stickyNav();
+
+    ui.navActive();
 
     const t1 = performance.now();
     
