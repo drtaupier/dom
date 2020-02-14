@@ -33,6 +33,21 @@ window.onload = function(){
             lista.appendChild(a);
         }
 
+        stickyNav(){
+            window.addEventListener('scroll', function(){
+                const header = document.getElementById('header');
+                let headerPositionTop = header.getBoundingClientRect().top;
+                let positionY = window.scrollY;
+                if(headerPositionTop < positionY){
+                    header.classList.add('sticky');
+                }else{
+                    header.classList.remove('sticky');
+                    header.style.transition = 'all 0.3s';
+                    
+                }
+            }) 
+        }
+
         sectionBg(section){
             window.addEventListener('scroll', function(){
                 //Aqui consigo la parte superior e inferior del div. y la medida que tiene con relacion al viewport.
@@ -140,10 +155,14 @@ window.onload = function(){
     for (const index in sectionBackground){
         ui.sectionBg(sectionBackground[index][0]);
     }
+
+    ui.stickyNav();
+
     const t1 = performance.now();
     
     console.log('this code take: ', `${t1-t0} milisegundos`);
 }
+
 
 
 

@@ -136,17 +136,14 @@ footer h3{
     background: rgba(39, 2, 4, 0.88);
 }
 
-.show{
+.sticky{
     position: fixed;
     z-index: 1000;
     top: 0;
     box-shadow: 0px 4px 3px rgba(0,0,0,.5);
-    height: 80px;
+    height: 90px;
     width: 100vw;
-}
-
-.hide{
-    top: -100;
+    transition: all 0.3s;
 }
 
 @media only screen and (max-width:1700px){
