@@ -48,10 +48,25 @@ window.onload = function(){
         }
 
         navActive(){
-            const section = document.querySelectorAll('section');
-            const lista = document.querySelectorAll('a');
-            const navActivo = section[0].hasAttribute('class', 'active');
-            console.log(navActivo);
+            window.addEventListener('scroll', function(){
+                const navBar = document.querySelectorAll('nav ul li a');
+                let fromTop = window.scrollY;
+
+                navBar.forEach(link => {
+                    let section = document.querySelector(link.hash);
+
+                    if(
+                        section.offsetTop <= fromTop &&
+                        section.offsetTop + section.offsetHeight > fromTop
+                    ){
+                        link.classList.add('listaActiva');
+                    }else{
+                        link.classList.remove('listaActiva');
+                    }
+                });
+
+            });
+            
         }
 
         sectionBg(section){
